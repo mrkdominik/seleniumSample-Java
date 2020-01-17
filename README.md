@@ -17,7 +17,7 @@ Maven
 
 ## Running the tests
 
-All tests can be run directly inside VisualStudio Test Explorer window
+All tests can be run directly inside IntelliJ IDEA
 
 ## Built With
 
