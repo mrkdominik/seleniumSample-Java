@@ -1,6 +1,7 @@
 package com.foo;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -11,7 +12,6 @@ public class Tests {
     private static WebDriver _webDriver;
     private static String _baseUrl;
     private static Browser _browser;
-
 
     @BeforeTest
     public static void SetUpTest() {
@@ -32,8 +32,12 @@ public class Tests {
         }
     }
 
-    @Test
-    public static void POCTest() {
-        _webDriver.navigate().to(_baseUrl);
+    @Test(description = "Addition test of sixteen and four")
+    public static void AdditionSixteenAndFour() {
+        PageObjectModel pom = new PageObjectModel(_webDriver,_baseUrl);
+        pom.AdditionSixteenAndFour();
+        int result = pom.GetResult();
+
+        Assert.assertEquals(result,20);
     }
 }
