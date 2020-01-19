@@ -7,7 +7,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 public class WebDriverFactory {
 
     private WebDriver _webDriver;
-    public Browser _browser;
+    private Browser _browser;
 
     private void Initialize() {
         if (Browser.Chrome == _browser)

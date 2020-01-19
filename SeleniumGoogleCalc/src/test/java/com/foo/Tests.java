@@ -36,8 +36,7 @@ public class Tests {
     public static void AddSixteenAndFour()
     {
         PageObjectModel pom = new PageObjectModel(_webDriver,_baseUrl);
-        pom.AdditionSixteenAndFour();
-        int result = pom.GetResult();
+        double result = pom.GetAdditionSixteenAndFour();
 
         Assert.assertEquals(result,20);
     }
@@ -46,8 +45,7 @@ public class Tests {
     public void AddZeroAndZero()
     {
         PageObjectModel pom = new PageObjectModel(_webDriver,_baseUrl);
-        pom.AdditionZeroAndZero();
-        int result = pom.GetResult();
+        double result = pom.GetAdditionZeroAndZero();
 
         Assert.assertEquals(result,0);
     }
@@ -57,8 +55,7 @@ public class Tests {
     public void AddMinusOneAndZero()
     {
         PageObjectModel pom = new PageObjectModel(_webDriver,_baseUrl);
-        pom.AdditionMinusOneAndZero();
-        int result = pom.GetResult();
+        double result = pom.GetAdditionMinusOneAndZero();
 
         Assert.assertEquals(result,-1);
     }
@@ -67,8 +64,7 @@ public class Tests {
     public void AddMinusOneAndMinusOne()
     {
         PageObjectModel pom = new PageObjectModel(_webDriver,_baseUrl);
-        pom.AdditionMinusOneAndMinusOne();
-        int result = pom.GetResult();
+        double result = pom.GetAdditionMinusOneAndMinusOne();
 
         Assert.assertEquals(result,-2);
     }
@@ -77,8 +73,7 @@ public class Tests {
     public void AddZeroAndMinusOne()
     {
         PageObjectModel pom = new PageObjectModel(_webDriver,_baseUrl);
-        pom.AdditionZeroAndMinusOne();
-        int result = pom.GetResult();
+        double result = pom.GetAdditionZeroAndMinusOne();
 
         Assert.assertEquals(result,-1);
     }

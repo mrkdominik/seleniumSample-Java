@@ -5,11 +5,9 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.text.DecimalFormat;
+
 public class PageObjectModel {
-
-    private WebDriver _webDriver;
-    private String _baseUrl;
-
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(1) > div > div")
     @CacheLookup
     private static WebElement Number0;
@@ -79,68 +77,68 @@ public class PageObjectModel {
 
     public PageObjectModel(WebDriver webDriver, String baseUrl)
     {
-        _webDriver = webDriver;
-        _baseUrl = baseUrl;
-        PageFactory.initElements(_webDriver, this);
+        PageFactory.initElements(webDriver, this);
+        webDriver.navigate().to(baseUrl);
     }
 
-    public void AdditionSixteenAndFour()
+    public double GetAdditionSixteenAndFour()
     {
-        _webDriver.navigate().to(_baseUrl);
         Number1.click();
         Number6.click();
         Plus.click();
         Number4.click();
         Equals.click();
+
+        return GetResult();
     }
 
-    public void AdditionZeroAndZero()
+    public double GetAdditionZeroAndZero()
     {
-        _webDriver.navigate().to(_baseUrl);
-
         Number0.click();
         Plus.click();
         Number0.click();
         Equals.click();
+
+        return GetResult();
     }
 
-    public void AdditionMinusOneAndZero()
+    public double GetAdditionMinusOneAndZero()
     {
-        _webDriver.navigate().to(_baseUrl);
-
         Minus.click();
         Number1.click();
         Plus.click();
         Number0.click();
         Equals.click();
+
+        return GetResult();
     }
 
-    public void AdditionMinusOneAndMinusOne()
+    public double GetAdditionMinusOneAndMinusOne()
     {
-        _webDriver.navigate().to(_baseUrl);
-
         Minus.click();
         Number1.click();
         Plus.click();
         Minus.click();
         Number1.click();
         Equals.click();
+
+        return GetResult();
     }
 
-    public void AdditionZeroAndMinusOne()
+    public double GetAdditionZeroAndMinusOne()
     {
-        _webDriver.navigate().to(_baseUrl);
-
         Number0.click();
         Minus.click();
         Number1.click();
         Equals.click();
+
+        return GetResult();
     }
 
-    public int GetResult()
+    public double GetResult()
     {
         if (Result != null)
-            return Integer.parseInt(Result.getText());
+            return Double.parseDouble(Result.getText());
 
         return 0;
     }
