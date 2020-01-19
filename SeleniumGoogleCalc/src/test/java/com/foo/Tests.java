@@ -1,19 +1,39 @@
 package com.foo;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
 
+@Test
 public class Tests {
 
-    @Test
-    public static void POCTest()
-    {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+    private static WebDriver _webDriver;
+    private static String _baseUrl;
+    private static Browser _browser;
 
-        WebDriver webDriver = new ChromeDriver();
-        webDriver.navigate().to("https://google.com");
-        System.out.println("Processed");
-        webDriver.quit();
+
+    @BeforeTest
+    public static void SetUpTest() {
+        _browser = Browser.Chrome;
+        _webDriver = new WebDriverFactory().GetInstance(_browser);
+        _baseUrl = "https://www.google.com/search?q=calculator";
+    }
+
+    @AfterTest
+    public static void AfterTestRun() {
+        try {
+            if (_webDriver != null) {
+                _webDriver.close();
+                _webDriver.quit();
+            }
+        } catch (Throwable  t) {
+            t.printStackTrace();
+        }
+    }
+
+    @Test
+    public static void POCTest() {
+        _webDriver.navigate().to(_baseUrl);
     }
 }
