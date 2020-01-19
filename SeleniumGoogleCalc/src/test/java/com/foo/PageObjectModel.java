@@ -16,70 +16,70 @@ public class PageObjectModel {
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(1) > div > div")
     @CacheLookup
-    static WebElement Number0;
+    private static WebElement Number0;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(1) > div > div")
     @CacheLookup
-    static WebElement Number1;
+    private static WebElement Number1;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(2) > div > div")
     @CacheLookup
-    static WebElement Number2;
+    private static WebElement Number2;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(3) > div > div")
     @CacheLookup
-    static WebElement Number3;
+    private static WebElement Number3;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(1) > div > div")
     @CacheLookup
-    static WebElement Number4;
+    private static WebElement Number4;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(2) > div > div")
     @CacheLookup
-    static WebElement Number5;
+    private static WebElement Number5;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(3) > div > div")
     @CacheLookup
-    static WebElement Number6;
+    private static WebElement Number6;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(1) > div > div")
     @CacheLookup
-    static WebElement Number7;
+    private static WebElement Number7;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(2) > div > div")
     @CacheLookup
-    static WebElement Number8;
+    private static WebElement Number8;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(3) > div > div")
     @CacheLookup
-    static WebElement Number9;
+    private static WebElement Number9;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(4) > div > div")
     @CacheLookup
-    static WebElement Plus;
+    private static WebElement Plus;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(4) > div > div")
     @CacheLookup
-    static WebElement Minus;
+    private static WebElement Minus;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(4) > div > div")
     @CacheLookup
-    static WebElement Multiply;
+    private static WebElement Multiply;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(4) > div > div")
     @CacheLookup
-    static WebElement Devide;
+    private static WebElement Devide;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(3) > div > div")
     @CacheLookup
-    static WebElement Equals;
+    private static WebElement Equals;
 
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(2) > div > div")
     @CacheLookup
-    static WebElement Dot;
+    private static WebElement Dot;
 
     @FindBy(css = "#cwmcwd > div > div > div.BRpYC > div.TIGsTb > div.fB3vD > div > div")
-    static WebElement Result;
+    private  WebElement Result;
 
     public PageObjectModel(WebDriver webDriver, String baseUrl)
     {
@@ -95,6 +95,49 @@ public class PageObjectModel {
         Number6.click();
         Plus.click();
         Number4.click();
+        Equals.click();
+    }
+
+    public void AdditionZeroAndZero()
+    {
+        _webDriver.navigate().to(_baseUrl);
+
+        Number0.click();
+        Plus.click();
+        Number0.click();
+        Equals.click();
+    }
+
+    public void AdditionMinusOneAndZero()
+    {
+        _webDriver.navigate().to(_baseUrl);
+
+        Minus.click();
+        Number1.click();
+        Plus.click();
+        Number0.click();
+        Equals.click();
+    }
+
+    public void AdditionMinusOneAndMinusOne()
+    {
+        _webDriver.navigate().to(_baseUrl);
+
+        Minus.click();
+        Number1.click();
+        Plus.click();
+        Minus.click();
+        Number1.click();
+        Equals.click();
+    }
+
+    public void AdditionZeroAndMinusOne()
+    {
+        _webDriver.navigate().to(_baseUrl);
+
+        Number0.click();
+        Minus.click();
+        Number1.click();
         Equals.click();
     }
 
