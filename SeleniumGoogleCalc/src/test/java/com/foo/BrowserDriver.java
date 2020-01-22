@@ -55,7 +55,7 @@ public final class BrowserDriver implements WebDriver {
             System.setProperty("webdriver.firefox.driver", firefoxDriverPath);
             return new FirefoxDriver();
         } catch (Exception ex) {
-            throw new RuntimeException("Couldn't create chrome driver");
+            throw new RuntimeException("Couldn't create firefox driver");
         }
     }
 
@@ -66,7 +66,7 @@ public final class BrowserDriver implements WebDriver {
             System.setProperty("webdriver.ie.driver", IEDriverPath);
             return new InternetExplorerDriver();
         } catch (Exception ex) {
-            throw new RuntimeException("Couldn't create chrome driver");
+            throw new RuntimeException("Couldn't create IE driver");
         }
     }
 
