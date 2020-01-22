@@ -21,7 +21,7 @@ All tests can be run directly inside IntelliJ IDEA
 
 ## Built With
 
-* [Maven](https://maven.apache.org/) - Cross-platform .NET framework
+* [Maven](https://maven.apache.org/) -  Project management and comprehension tool
 * [maven-compiler-plugin] - (Maven plugin) The Compiler Plugin used to compile the sources of project
 * [maven-surefire-plugin] - (Maven dependency) Run TestNG tests using Surefire.
 * [TestNG](https://testng.org/) - (Maven plugin) TestNG is a testing framework inspired from JUnit and NUnit
