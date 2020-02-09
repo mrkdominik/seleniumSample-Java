@@ -10,19 +10,18 @@ import org.testng.annotations.*;
 public class TestBase {
 
     private static WebDriver webDriver;
-    private String baseUrl;
     protected CalculatorBlock calculatorBlock;
 
     @BeforeTest
     public void SetUpTest() {
         webDriver = DriverFactory.CreateInstanceDesktop(Browser.Chrome);
+        webDriver.navigate().to("https://www.google.com/search?q=calculator");
     }
 
     @AfterTest
     public static void AfterTestRun() {
         try {
             if (webDriver != null) {
-                webDriver.close();
                 webDriver.quit();
             }
         } catch (Exception ex) {
@@ -32,13 +31,12 @@ public class TestBase {
 
     @BeforeMethod
     public void BeforeMethod() {
-        baseUrl = "https://www.google.com/search?q=calculator";
-        calculatorBlock = new CalculatorBlock(webDriver, baseUrl);
+        calculatorBlock = new CalculatorBlock(webDriver);
     }
 
     @AfterMethod
     public void AfterMethod() {
-        calculatorBlock = null;
+        webDriver.navigate().refresh();
     }
 
 }

@@ -114,11 +114,10 @@ public class CalculatorBlock {
         return Result.getText();
     }
 
-    public CalculatorBlock(WebDriver webDriver, String url)
+    public CalculatorBlock(WebDriver webDriver)
     {
-        PageFactory.initElements(webDriver, this);
+        PageFactory.initElements(webDriver,this);
         // sadly, its needed just right in that that moment to load model.
-        webDriver.navigate().to(url);
     }
 
     public static void ClickWholeEquation(String equation)
