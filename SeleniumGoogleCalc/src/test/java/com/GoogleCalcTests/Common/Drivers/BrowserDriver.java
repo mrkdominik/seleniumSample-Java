@@ -1,10 +1,10 @@
-package com.foo;
+package com.GoogleCalcTests.Drivers;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.io.File;
@@ -15,59 +15,39 @@ public final class BrowserDriver implements WebDriver {
 
     private WebDriver driver;
     private final Browser browser;
+
     private final String chromeDriverPath = "src/test/resources/chromedriver.exe";
-    private final String firefoxDriverPath = "src/test/resources/geckodriver.exe";
-    private final String IEDriverPath = "src/test/resources/IEDriverServer.exe";
+    private final String msEdgeDriverPath = "src/test/resources/msedgedriver.exe";
+    private final String ieDriverPath = "src/test/resources/IEDriverServer.exe";
 
     public BrowserDriver(Browser browser) {
         this.browser = browser;
-        this.driver = createDriver(browser);
+        this.driver = CreateDriver(browser);
     }
 
-    private WebDriver createDriver(Browser browser) {
-        if (browser == Browser.Chrome)
-            return chromeDriver();
+    private WebDriver CreateDriver(Browser browser) {
 
-        if (browser == Browser.Firefox)
-            return firefoxDriver();
+        if (driver != null)
+            return driver;
 
-        if (browser == Browser.IE)
-            return IEDriver();
+        switch (driver)
+        {
+            case Browser.Chrome:
+                return ChromeDriver();
+            case Browser.Edge:
+                return MsEdgeDriver();
+            case Browser.Ie:
+                return IeDriver();
+            case Browser.Safari:
+            case Browser.Firefox:
+            case Browser.Opera:
+            case Browser.PhantomJs:
+                    throw new IllegalArgumentException(String.format("{0} browser not implemented yet", driver));
+            default:
+                throw new WebDriverException("Invalid browser name");
+        }
 
         throw new RuntimeException("Invalid browser name");
-    }
-
-    private WebDriver chromeDriver() {
-        checkDriver(Browser.Chrome, chromeDriverPath);
-
-        try {
-            System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-            return new ChromeDriver();
-        } catch (Exception ex) {
-            throw new RuntimeException("Couldn't create chrome driver");
-        }
-    }
-
-    private WebDriver firefoxDriver() {
-        checkDriver(Browser.Firefox, firefoxDriverPath);
-
-        try {
-            System.setProperty("webdriver.firefox.driver", firefoxDriverPath);
-            return new FirefoxDriver();
-        } catch (Exception ex) {
-            throw new RuntimeException("Couldn't create firefox driver");
-        }
-    }
-
-    private WebDriver IEDriver() {
-        checkDriver(Browser.IE, IEDriverPath);
-
-        try {
-            System.setProperty("webdriver.ie.driver", IEDriverPath);
-            return new InternetExplorerDriver();
-        } catch (Exception ex) {
-            throw new RuntimeException("Couldn't create IE driver");
-        }
     }
 
     private void checkDriver(Browser browser, String driverPath) {
@@ -75,16 +55,44 @@ public final class BrowserDriver implements WebDriver {
             throw new RuntimeException(browser.name() + "driver does not exist!");
     }
 
+    private WebDriver ChromeDriver() {
+        checkDriver(Browser.Chrome, chromeDriverPath);
+
+        try {
+            System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+            return new ChromeDriver();
+        } catch (Exception ex) {
+            throw new RuntimeException("Couldn't create Chrome driver");
+        }
+    }
+
+    private WebDriver MsEdgeDriver() {
+        checkDriver(Browser.Edge, msEdgeDriverPath);
+
+        try {
+            System.setProperty("webdriver.edge.driver", msEdgeDriverPath);
+            return new InternetExplorerDriver();
+        } catch (Exception ex) {
+            throw new RuntimeException("Couldn't create Edge driver");
+        }
+    }
+
+    private WebDriver IeDriver() {
+        checkDriver(Browser.Ie, ieDriverPath);
+
+        try {
+            System.setProperty("webdriver.ie.driver", ieDriverPath);
+            return new InternetExplorerDriver();
+        } catch (Exception ex) {
+            throw new RuntimeException("Couldn't create IE driver");
+        }
+    }
+
     public String toString() {
         return this.browser.name();
     }
 
-    public WebDriver driver() {
-        return this.driver;
-    }
-
-    // Implements interface
-
+    //region interface implementation
     @Override
     public void get(String url) {
         driver.get(url);
@@ -149,4 +157,5 @@ public final class BrowserDriver implements WebDriver {
     public Options manage() {
         return driver.manage();
     }
+    //endregion
 };

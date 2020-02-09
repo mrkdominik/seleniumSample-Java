@@ -1,4 +1,4 @@
-package com.foo;
+package com.GoogleCalcTests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -33,7 +33,7 @@ public class AdditionTests {
     @Test(description = "Addition test of sixteen and four")
     public static void AddSixteenAndFour()
     {
-        PageObjectModel pom = new PageObjectModel(webDriver,baseUrl);
+        CalculatorBlockModel pom = new CalculatorBlockModel(webDriver,baseUrl);
         double result = pom.GetAdditionSixteenAndFour();
 
         Assert.assertEquals(result,20);
@@ -42,7 +42,7 @@ public class AdditionTests {
     @Test(description = "Addition test of zero and zero")
     public void AddZeroAndZero()
     {
-        PageObjectModel pom = new PageObjectModel(webDriver,baseUrl);
+        CalculatorBlockModel pom = new CalculatorBlockModel(webDriver,baseUrl);
         double result = pom.GetAdditionZeroAndZero();
 
         Assert.assertEquals(result,0);
@@ -52,7 +52,7 @@ public class AdditionTests {
     @Test(description = "Addition test of minus one and zero")
     public void AddMinusOneAndZero()
     {
-        PageObjectModel pom = new PageObjectModel(webDriver,baseUrl);
+        CalculatorBlockModel pom = new CalculatorBlockModel(webDriver,baseUrl);
         double result = pom.GetAdditionMinusOneAndZero();
 
         Assert.assertEquals(result,-1);
@@ -61,7 +61,7 @@ public class AdditionTests {
     @Test(description = "Addition test of minus one and minus one")
     public void AddMinusOneAndMinusOne()
     {
-        PageObjectModel pom = new PageObjectModel(webDriver,baseUrl);
+        CalculatorBlockModel pom = new CalculatorBlockModel(webDriver,baseUrl);
         double result = pom.GetAdditionMinusOneAndMinusOne();
 
         Assert.assertEquals(result,-2);
@@ -70,7 +70,7 @@ public class AdditionTests {
     @Test(description = "Addition test of zero and minus one")
     public void AddZeroAndMinusOne()
     {
-        PageObjectModel pom = new PageObjectModel(webDriver,baseUrl);
+        CalculatorBlockModel pom = new CalculatorBlockModel(webDriver,baseUrl);
         double result = pom.GetAdditionZeroAndMinusOne();
 
         Assert.assertEquals(result,-1);
