@@ -6,7 +6,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CalculatorBlockModel {
+public class CalculatorBlock {
     @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(1) > div > div")
     @CacheLookup
     private static WebElement Number0;
@@ -92,46 +92,43 @@ public class CalculatorBlockModel {
     private static WebElement ClearEntry;
 
     @FindBy(css = "#cwmcwd > div > div > div.BRpYC > div.TIGsTb > span")
-    @CacheLookup
     private static WebElement History;
 
     @FindBy(css = "#cwmcwd > div > div > div.BRpYC > div.tR3EBc > div:nth-child(3) > div.CpV0xd")
-    @CacheLookup
     private static WebElement HistoryList;
 
     @FindBy(css = "#cwmcwd > div > div > div.BRpYC > div.TIGsTb > div.fB3vD > div > div")
-    private  WebElement Result;
+    private static WebElement Result;
 
 
     public double GetDoubleResult()
     {
-        if (Result != null)
-            return Double.parseDouble(Result.getText());
-
-        return 0;
+        Equal.click();
+        String result = Result.getText().trim();
+        return Double.parseDouble(result);
     }
 
     public String GetTextResult()
     {
-        if (Result != null)
-            return Result.getText();
-
-        return null;
+        Equal.click();
+        return Result.getText();
     }
 
-    public CalculatorBlockModel(WebDriver webDriver)
+    public CalculatorBlock(WebDriver webDriver, String url)
     {
         PageFactory.initElements(webDriver, this);
+        // sadly, its needed just right in that that moment to load model.
+        webDriver.navigate().to(url);
     }
 
-    public void ClickWholeEquation(String equation)
+    public static void ClickWholeEquation(String equation)
     {
         //todo: filter only acceptable chars
         for (char character : equation.trim().toCharArray())
             ClickElement(character);
     }
     
-    private void ClickElement(char character)
+    private static void ClickElement(char character)
     {
         // Without explicit char parsing, it should be faster.
         switch ((int)character)

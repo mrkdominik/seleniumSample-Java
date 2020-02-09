@@ -1,3 +1,5 @@
+package com.GoogleCalcTests.Common;
+
 public enum Browser {
     PhantomJs,
     Chrome,
