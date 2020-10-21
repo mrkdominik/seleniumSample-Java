@@ -46,7 +46,7 @@ public final class BrowserDriver implements WebDriver {
             case Firefox:
             case Opera:
             case PhantomJs:
-                throw new WebDriverException(String.format("{0} browser not implemented yet",_browser));
+                throw new WebDriverException(String.format("%s browser not implemented yet",_browser));
             default:
                 throw new WebDriverException("Invalid browser name");
         }
@@ -64,7 +64,7 @@ public final class BrowserDriver implements WebDriver {
             System.setProperty("webdriver.chrome.driver", chromeDriverPath);
             return new ChromeDriver();
         } catch (Exception ex) {
-            throw new WebDriverException(String.format("Couldn't create {0} _driver {1}", _browser, ex.getMessage()));
+            throw new WebDriverException(String.format("Couldn't create %s _driver %s", _browser, ex.getMessage()));
         }
     }
 
@@ -75,7 +75,7 @@ public final class BrowserDriver implements WebDriver {
             System.setProperty("webdriver.edge.driver", msEdgeDriverPath);
             return new InternetExplorerDriver();
         } catch (Exception ex) {
-            throw new WebDriverException(String.format("Couldn't create {0} _driver {1}", _browser, ex.getMessage()));
+            throw new WebDriverException(String.format("Couldn't create %s _driver %s", _browser, ex.getMessage()));
         }
     }
 
@@ -86,7 +86,7 @@ public final class BrowserDriver implements WebDriver {
             System.setProperty("webdriver.ie.driver", ieDriverPath);
             return new InternetExplorerDriver();
         } catch (Exception ex) {
-            throw new WebDriverException(String.format("Couldn't create {0} _driver {1}", _browser, ex.getMessage()));
+            throw new WebDriverException(String.format("Couldn't create %s _driver %s", _browser, ex.getMessage()));
         }
     }
 
