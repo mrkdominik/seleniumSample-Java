@@ -7,97 +7,101 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CalculatorBlock {
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(1) > div > div")
+    @FindBy(id = "zV9nZe")
+    @CacheLookup
+    private static WebElement Banner;
+
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(1) > div > div")
     @CacheLookup
     private static WebElement Number0;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(1) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(1) > div > div")
     @CacheLookup
     private static WebElement Number1;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(2) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(2) > div > div")
     @CacheLookup
     private static WebElement Number2;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(3) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(3) > div > div")
     @CacheLookup
     private static WebElement Number3;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(1) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(1) > div > div")
     @CacheLookup
     private static WebElement Number4;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(2) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(2) > div > div")
     @CacheLookup
     private static WebElement Number5;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(3) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(3) > div > div")
     @CacheLookup
     private static WebElement Number6;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(1) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(1) > div > div")
     @CacheLookup
     private static WebElement Number7;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(2) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(2) > div > div")
     @CacheLookup
     private static WebElement Number8;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(3) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(3) > div > div")
     @CacheLookup
     private static WebElement Number9;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(4) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(4) > div > div")
     @CacheLookup
     private static WebElement Plus;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(4) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(4) > div > div")
     @CacheLookup
     private static WebElement Minus;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(4) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(4) > div > div")
     @CacheLookup
     private static WebElement Multiply;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(4) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(4) > div > div")
     @CacheLookup
     private static WebElement Devide;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(3) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(3) > div > div")
     @CacheLookup
     private static WebElement Equal;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(2) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(2) > div > div")
     @CacheLookup
     private static WebElement Dot;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(3) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(3) > div > div")
     @CacheLookup
     private static WebElement Percent;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(1) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(1) > div > div")
     @CacheLookup
     private static WebElement LeftBracket;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(2) > div > div")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(2) > div > div")
     @CacheLookup
     private static WebElement RightBracket;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(4) > div > div:nth-child(1)")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(4) > div > div:nth-child(1)")
     @CacheLookup
     private static WebElement AllClear;
 
-    @FindBy(css = "#cwmcwd > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(4) > div > div:nth-child(2)")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(4) > div > div:nth-child(2)")
     @CacheLookup
     private static WebElement ClearEntry;
 
-    @FindBy(css = "#cwmcwd > div > div > div.BRpYC > div.TIGsTb > span")
+    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.BRpYC > div.TIGsTb > span")
     private static WebElement History;
 
     @FindBy(css = "#cwmcwd > div > div > div.BRpYC > div.tR3EBc > div:nth-child(3) > div.CpV0xd")
     private static WebElement HistoryList;
 
-    @FindBy(css = "#cwmcwd > div > div > div.BRpYC > div.TIGsTb > div.fB3vD > div > div")
+    @FindBy(css = "#cwos")
     private static WebElement Result;
 
 
@@ -125,6 +129,12 @@ public class CalculatorBlock {
         //todo: filter only acceptable chars
         for (char character : equation.trim().toCharArray())
             ClickElement(character);
+    }
+
+    public static void CloseBanner()
+    {
+        if (Banner.isDisplayed())
+            Banner.click();
     }
     
     private static void ClickElement(char character)
