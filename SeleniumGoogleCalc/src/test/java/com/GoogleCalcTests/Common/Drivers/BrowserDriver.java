@@ -1,6 +1,7 @@
 package com.GoogleCalcTests.Common.Drivers;
 
 import com.GoogleCalcTests.Common.Browser;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -16,20 +17,16 @@ public final class BrowserDriver implements WebDriver {
     private WebDriver _driver;
     private final Browser _browser;
 
-    private final String chromeDriverPath = "src/test/resources/chromedriver.exe";
-    private final String msEdgeDriverPath = "src/test/resources/msedgedriver.exe";
-    private final String ieDriverPath = "src/test/resources/IEDriverServer.exe";
-
     /**
      * Create new local instance of webDriver based on required browser
      * @param browser
      */
     public BrowserDriver(Browser browser) {
         _browser = browser;
-        _driver = CreateDriver(browser);
+        _driver = CreateDriver();
     }
 
-    private WebDriver CreateDriver(Browser browser) {
+    private WebDriver CreateDriver() {
 
         if (_driver != null)
             return _driver;
@@ -52,16 +49,9 @@ public final class BrowserDriver implements WebDriver {
         }
     }
 
-    private void checkDriver(Browser browser, String driverPath) {
-        if (!new File(driverPath).exists())
-            throw new RuntimeException(browser.name() + "driver does not exist!");
-    }
-
     private WebDriver ChromeDriver() {
-        checkDriver(Browser.Chrome, chromeDriverPath);
-
         try {
-            System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+            WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
         } catch (Exception ex) {
             throw new WebDriverException(String.format("Couldn't create %s _driver %s", _browser, ex.getMessage()));
@@ -69,10 +59,8 @@ public final class BrowserDriver implements WebDriver {
     }
 
     private WebDriver MsEdgeDriver() {
-        checkDriver(Browser.Edge, msEdgeDriverPath);
-
         try {
-            System.setProperty("webdriver.edge.driver", msEdgeDriverPath);
+            WebDriverManager.edgedriver().setup();
             return new InternetExplorerDriver();
         } catch (Exception ex) {
             throw new WebDriverException(String.format("Couldn't create %s _driver %s", _browser, ex.getMessage()));
@@ -80,10 +68,8 @@ public final class BrowserDriver implements WebDriver {
     }
 
     private WebDriver IeDriver() {
-        checkDriver(Browser.Ie, ieDriverPath);
-
         try {
-            System.setProperty("webdriver.ie.driver", ieDriverPath);
+            WebDriverManager.iedriver().setup();
             return new InternetExplorerDriver();
         } catch (Exception ex) {
             throw new WebDriverException(String.format("Couldn't create %s _driver %s", _browser, ex.getMessage()));

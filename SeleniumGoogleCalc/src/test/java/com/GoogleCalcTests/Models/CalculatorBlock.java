@@ -7,101 +7,95 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CalculatorBlock {
-    @FindBy(id = "zV9nZe")
+    @FindBy(id = "L2AGLb")
     @CacheLookup
     private static WebElement Banner;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(1) > div > div")
+    @FindBy(xpath = "//div[text()='0']")
     @CacheLookup
     private static WebElement Number0;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(1) > div > div")
+    @FindBy(xpath = "//div[text()='1']")
     @CacheLookup
     private static WebElement Number1;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(2) > div > div")
+    @FindBy(xpath = "//div[text()='2']")
     @CacheLookup
     private static WebElement Number2;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(3) > div > div")
+    @FindBy(xpath = "//div[text()='3']")
     @CacheLookup
     private static WebElement Number3;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(1) > div > div")
+    @FindBy(xpath = "//div[text()='4']")
     @CacheLookup
     private static WebElement Number4;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(2) > div > div")
+    @FindBy(xpath = "//div[text()='5']")
     @CacheLookup
     private static WebElement Number5;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(3) > div > div")
+    @FindBy(xpath = "//div[text()='6']")
     @CacheLookup
     private static WebElement Number6;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(1) > div > div")
+    @FindBy(xpath = "//div[text()='7']")
     @CacheLookup
     private static WebElement Number7;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(2) > div > div")
+    @FindBy(xpath = "//div[text()='8']")
     @CacheLookup
     private static WebElement Number8;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(3) > div > div")
+    @FindBy(xpath = "//div[text()='9']")
     @CacheLookup
     private static WebElement Number9;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(4) > div > div")
+    @FindBy(xpath = "//div[text()='+']")
     @CacheLookup
     private static WebElement Plus;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(4) > td:nth-child(4) > div > div")
+    @FindBy(xpath = "//div[text()='-']")
     @CacheLookup
     private static WebElement Minus;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(3) > td:nth-child(4) > div > div")
+    @FindBy(xpath = "//div[text()='*']")
     @CacheLookup
     private static WebElement Multiply;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(2) > td:nth-child(4) > div > div")
+    @FindBy(xpath = "//div[text()='÷']")
     @CacheLookup
     private static WebElement Devide;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(3) > div > div")
+    @FindBy(xpath = "//div[text()='=']")
     @CacheLookup
     private static WebElement Equal;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(5) > td:nth-child(2) > div > div")
+    @FindBy(xpath = "//div[text()='.']")
     @CacheLookup
     private static WebElement Dot;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(3) > div > div")
+    @FindBy(xpath = "//div[text()='%']")
     @CacheLookup
     private static WebElement Percent;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(1) > div > div")
+    @FindBy(xpath = "//div[text()='(']")
     @CacheLookup
     private static WebElement LeftBracket;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(2) > div > div")
+    @FindBy(xpath = "//div[text()=')']")
     @CacheLookup
     private static WebElement RightBracket;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(4) > div > div:nth-child(1)")
+    @FindBy(xpath = "//div[text()='AC']")
     @CacheLookup
     private static WebElement AllClear;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.SKWP2e > div > table.ElumCf > tbody > tr:nth-child(1) > td:nth-child(4) > div > div:nth-child(2)")
+    @FindBy(xpath = "//div[text()='CE']")
     @CacheLookup
     private static WebElement ClearEntry;
 
-    @FindBy(css = "#rso > div:nth-child(1) > div > div > div.card-section > div > div > div.BRpYC > div.TIGsTb > span")
-    private static WebElement History;
-
-    @FindBy(css = "#cwmcwd > div > div > div.BRpYC > div.tR3EBc > div:nth-child(3) > div.CpV0xd")
-    private static WebElement HistoryList;
-
-    @FindBy(css = "#cwos")
+    @FindBy(xpath = "//span[@id='cwos']")
     private static WebElement Result;
 
 
