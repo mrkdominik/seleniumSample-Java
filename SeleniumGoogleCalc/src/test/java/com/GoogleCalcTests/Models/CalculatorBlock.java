@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CalculatorBlock {
-    @FindBy(id = "L2AGLb")
+    @FindBy(xpath = "//button[@id='L2AGLb']")
     @CacheLookup
     private static WebElement Banner;
 
