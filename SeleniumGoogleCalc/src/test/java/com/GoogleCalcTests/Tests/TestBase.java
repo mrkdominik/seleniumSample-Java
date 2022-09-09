@@ -17,7 +17,7 @@ public class TestBase {
         webDriver = DriverFactory.CreateInstanceDesktop(Browser.Chrome);
         webDriver.navigate().to("https://www.google.com/search?q=calculator");
         calculatorBlock = new CalculatorBlock(webDriver);
-        calculatorBlock.CloseBanner();
+        CalculatorBlock.CloseBanner();
     }
 
     @AfterTest

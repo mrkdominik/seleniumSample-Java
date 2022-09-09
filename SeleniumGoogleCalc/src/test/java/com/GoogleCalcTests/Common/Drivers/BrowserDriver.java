@@ -8,18 +8,17 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import java.io.File;
 import java.util.List;
 import java.util.Set;
 
 public final class BrowserDriver implements WebDriver {
 
-    private WebDriver _driver;
+    private final WebDriver _driver;
     private final Browser _browser;
 
     /**
      * Create new local instance of webDriver based on required browser
-     * @param browser
+     * @param browser browser
      */
     public BrowserDriver(Browser browser) {
         _browser = browser;
@@ -142,4 +141,4 @@ public final class BrowserDriver implements WebDriver {
         return _driver.manage();
     }
     //endregion
-};
+}

@@ -14,12 +14,12 @@ import java.util.Set;
 
 public final class BrowserStackDriver implements WebDriver {
 
-    private WebDriver _driver;
+    private final WebDriver _driver;
     private final Browser _browser;
 
     /**
      * Create new instance of browserstack webDriver based on required browser
-     * @param browser
+     * @param browser browser
      */
     public BrowserStackDriver(Browser browser) {
         _browser = browser;
@@ -44,7 +44,7 @@ public final class BrowserStackDriver implements WebDriver {
         }
         catch (Exception ex)
         {
-            throw new WebDriverException(String.format("Couldn't create BrowserStack driver {0}", ex.getMessage()));
+            throw new WebDriverException(String.format("Couldn't create BrowserStack driver %s", ex.getMessage() ));
         }
     }
 
@@ -114,4 +114,4 @@ public final class BrowserStackDriver implements WebDriver {
         return _driver.manage();
     }
     //endregion
-};
+}
